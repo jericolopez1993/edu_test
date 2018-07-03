@@ -1,0 +1,32 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @professor.name %>
+</p>
+<p>
+  <strong>Current Ratings:</strong>
+  <%= @average_ratings %>
+</p>
+<p>
+  <strong>Rate this Professor:</strong>
+  <%= render 'form_rating', professor: @professor, rating: @rating %>
+</p>
+<p>
+  <strong>Courses:</strong>
+<table class="table table-bordered">
+  <thead>
+  <tr>
+    <th>Name</th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @courses.each do |course| %>
+      <tr>
+        <td><%= link_to course.name, course %></td>
+      </tr>
+  <% end %>
+  </tbody>
+</table>
+</p>

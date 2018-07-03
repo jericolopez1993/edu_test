@@ -1,0 +1,28 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @course.name %>
+</p>
+
+<p>
+  <strong>Professors:</strong>
+<table class="table table-bordered">
+  <thead>
+  <tr>`
+    <th>Name</th>
+    <th>Rating</th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @professors.each do |professor| %>
+      <tr>
+        <td><%= link_to professor.name, professor %></td>
+        <td><%= professor.average_number %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+</p>
+
